@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard - FOR-TEST | AI-IDS-IPS Lab</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="dashboard-container">
+    <div class="card">
+      <header class="dash-header-bar">
+        <div class="dash-brand">FOR-TEST</div>
+        <div class="dash-lab">AI-IDS-IPS LAB</div>
+      </header>
+
+      <section class="dash-welcome">
+        <h1>Authentication Dashboard</h1>
+        <p>Welcome, <span class="user-highlight">{{ username }}</span></p>
+      </section>
+
+      <h2 class="dash-section-title">Authentication Status</h2>
+      <div class="status-grid">
+        <div class="status-item">
+          <div class="status-label">Status</div>
+          <div class="status-value status-tag-active">AUTHENTICATED</div>
+        </div>
+        <div class="status-item">
+          <div class="status-label">Session</div>
+          <div class="status-value">Active</div>
+        </div>
+        <div class="status-item">
+          <div class="status-label">Username</div>
+          <div class="status-value">{{ username }}</div>
+        </div>
+        <div class="status-item">
+          <div class="status-label">Role</div>
+          <div class="status-value">
+            <span class="role-badge">{{ role }}</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="purpose-box">
+        <div class="purpose-title">Purpose</div>
+        <div class="purpose-desc">Controlled AI-IDS-IPS Network Traffic Testing</div>
+      </div>
+
+      <div class="dash-actions">
+        <form action="{{ url_for('logout') }}" method="POST">
+          <button type="submit" class="btn btn-danger">Logout</button>
+        </form>
+      </div>
+
+      <footer class="card-footer-notice">
+        <div class="notice-badge">Controlled Security Testing Environment</div>
+        <p class="notice-text">This application is intended for authorized laboratory testing.</p>
+      </footer>
+    </div>
+  </div>
+</body>
+</html>
+
